@@ -1,0 +1,508 @@
+:root {
+    --primary: mediumpurple;
+    --secondary: blueviolet;
+    --text: #d1abff;
+    --shadow: #1116;
+    --bdfilter: blur(5px) opacity(0.9) brightness(0.9);
+}
+
+/* @import "https://www.nerdfonts.com/assets/css/webfont.css"
+<i class="nf nf-custom-vim"></i> */
+@font-face {
+    font-family: "FiraCode Nerd Font";
+    src: url("fonts/FiraCodeNerdFontMono-Regular.ttf") format("truetype");
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 700;
+}
+
+
+
+/* mediumpurple cornflowerblue */
+@keyframes bg {
+    0% {
+        background: var(--primary);
+    }
+    20% {
+        background: var(--primary);
+    }
+    50% {
+        background: var(--secondary);
+    }
+    80% {
+        background: var(--primary);
+    }
+    100% {
+        background: var(--primary);
+    }
+}
+
+@keyframes border {
+   0% {
+        border-color: var(--primary);
+    }
+    20% {
+        border-color: var(--primary);
+    }
+    50% {
+        border-color: var(--secondary);
+    }
+    80% {
+        border-color: var(--primary);
+    }
+    100% {
+        border-color: var(--primary);
+    }
+}
+
+@keyframes glitch {
+   0% {
+        transform: translate(-2px, -2px);
+    }
+    25% {
+        transform: translate(2px, -2px);
+    }
+    50% {
+        transform: translate(2px, 2px);
+    }
+    75% {
+        transform: translate(-2px, 2px);
+    }
+    100% {
+        transform: translate(-2px, -2px);
+    }
+}
+
+/*@keyframes button {
+    0% {
+        border: 1px solid mediumpurple;
+        color: mediumpurple;
+        box-shadow: 0 0 8px mediumpurple;
+    }
+    50% {
+        border: 1px solid cornflowerblue;
+        color: cornflowerblue;
+        box-shadow: 0 0 8px cornflowerblue;
+    }
+    100% {
+        border: 1px solid mediumpurple;
+        color: mediumpurple;
+        box-shadow: 0 0 8px mediumpurple;
+    }
+}*/
+
+* {
+    margin: 0;
+    padding: 0;
+
+    color: #dab6ff;
+    cursor: default;
+
+    transition-duration: 0.2s;
+
+    /*animation-name: text;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;*/
+
+    font-family: "FiraCode Nerd Font";
+    scrollbar-color: var(--primary) var(--shadow);
+}
+
+html::before {
+    content: "";
+    z-index: -1;
+    width: 500vw;
+    aspect-ratio: 1/1;
+    background-image: url("bg.webp");
+    transform: rotate(20deg) scale(1.45);
+    display: block;
+    position: fixed;
+    background-size: 128px;
+}
+html {
+    margin: 0;
+    padding: 0;
+
+    color: #dab6ff;
+    cursor: default;
+
+    transition-duration: 0.2s;
+
+
+    font-family: "FiraCode Nerd Font", "DejaVu Font", monospace;
+    animation-name: bg;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+body {
+    padding: 0 10%;
+    padding-top: 10px;
+    overflow-x: hidden;
+}
+#logo-container {
+    position: relative;
+    text-align: center;
+    /*! aspect-ratio: 3/1; */
+    backdrop-filter: var(--bdfilter);
+    padding: 15px 0;
+    border-radius: 5px;
+    font-size: xx-large;
+    box-shadow: 0 0 20px var(--shadow);
+    text-shadow: 2px 2px 8px var(--primary);
+}
+#logo-container::before {
+    content: " ";
+    position: absolute;
+    background-image: url("");
+    width: 100%;
+    height: 40px;
+    left: 0;
+    z-index: -1;
+}
+#header {
+    margin: 20px 0;
+    display: flex;
+    position: sticky;
+    top: 10px;
+    z-index: 1;
+    backdrop-filter: var(--bdfilter);
+    padding: 8px 16px;
+    /*! border: 1px solid #dab6ff21; */
+    box-shadow: 0 0 10px var(--shadow);
+    justify-content: center;
+    grid-gap: 5px;
+    margin-top: 70px;
+}
+
+#header > li {
+    list-style-type: none;
+    font-size: large;
+}
+
+#header > li:hover {
+    text-decoration: underline;
+}
+#social {
+    
+    position: absolute;
+    top: 8px;
+    height: 40px;
+    width: calc(100% - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    font-size: 0.9em;
+    padding: 0 30px;
+}
+#social > span {
+    padding-right: 8px;
+    cursor: pointer;
+}
+#social > span.spacer {
+    flex-grow: 1;
+}
+
+
+
+
+
+#container {
+    padding: 2px 5px;
+    min-height: 120vh;
+    margin-bottom: 20px;
+    grid-gap: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+#logo-container > :nth-child(1) {
+    color: #ff0048;
+    position: absolute;
+    mix-blend-mode: screen;
+    transform: translate(-1px, -1px);
+    animation-name: glitch;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#logo-container > :nth-child(2) {
+    color: #0034ff;
+    mix-blend-mode: screen;
+    position: absolute;
+    transform: translate(1px, 1px);
+    animation-name: glitch;
+    animation-duration: 4.03s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+#logo-container > :nth-child(3) {
+    color: #4f4;
+    mix-blend-mode: screen;
+    animation-name: drunk-rotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    text-shadow: 0 0 10px white;
+}
+
+
+#footer {
+    width: calc(100vw - 50px);
+    border-top: 5px solid var(--primary);
+    padding: 20px 25px;
+    background: #17171794;
+    backdrop-filter: var(--bdfilter);
+    display: flex;
+    padding-bottom: 50px;
+    grid-gap: 8px;
+    position: absolute;
+    left: 0;
+    border-radius: 30px 30px 0 0;
+}
+#footer > #copyright {
+    text-align: center;
+    display: block;
+    text-shadow: 0 0 8px var(--primary);
+    margin-top: 4px;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translate(-50%);
+    width: max-content;
+}
+
+a {
+    cursor: pointer;
+}
+.f-left {
+    
+    width: calc(50% - 4px);
+    padding: 8px;
+}
+.f-right {
+    
+    width: calc(50% - 4px);
+    padding: 8px;
+}
+.f-divider {
+    
+    background: var(--primary);
+    width: 1px;
+}
+
+
+
+
+.button {
+    width: fit-content;
+    padding: 3px 5px;
+    animation-name: button;
+    backdrop-filter: blur(3px);
+    background: #00000029;
+    font-size: large;
+    /*! border: 1px solid #dab6ff0f; */
+    border-radius: 5px;
+    padding: 5px 12px;
+    backdrop-filter: var(--bdfilter);
+}
+.button:hover {
+    width: fit-content;
+    padding: 3px 5px;
+    background: #111111c2;
+    padding: 5px 12px;
+    box-shadow: 0 0 50px var(--shadow);
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.quote {
+    letter-spacing: 0.9px;
+}
+
+
+
+
+
+
+
+
+.post {
+    border: 1px solid var(--primary);
+    backdrop-filter: var(--bdfilter);
+    background: var(--shadow);
+    padding: 12px 16px;
+    box-shadow: 0 0 10px var(--shadow);
+    border-radius: 5px;
+}
+.p-top {
+    
+    display: flex;
+}
+.p-tags {
+    display: flex;
+    width: fit-content;
+    right: 12px;
+    position: absolute;
+}
+.p-tag::before {
+    content: " ";
+    padding-left: 5px;
+    padding-right: 0px;
+}
+.p-tag::after {
+    content: "/";
+    padding-left: 5px;
+    padding-right: 3px;
+    color: gray;
+}
+.p-time::before {
+    content: "󱑆 ";
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+.p-title {
+    font-size: large;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px var(--primary);
+}
+.p-images {
+    
+    min-height: 100px;
+    box-shadow: 0 0 10px var(--shadow);
+    border: 1px solid var(--primary);
+    background: var(--shadow);
+    margin: 8px 0;
+    border-radius: 5px;
+    max-height: 70vh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0;
+}
+.p-desc {
+    
+}
+.p-img {
+    
+    width: auto;
+    max-height: 70vh;
+    max-width: -moz-available;
+    border-radius: 5px;
+    object-fit: contain;
+    box-shadow: 0 0 10px var(--shadow);
+}
+
+
+
+
+
+
+.triangle {
+    
+    width: 0;
+    height: 0;
+    border: 50px solid transparent;
+    position: fixed;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-left: 50px solid var(--primary);
+    animation-name: border;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    box-shadow: -10px 0px 20px var(--shadow);
+    z-index: 1;
+}
+.t-content {
+    
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background: var(--primary);
+    color: white;
+    padding: 8px;
+    font-size: large;
+    transform: translate(100%, 500%) rotate(45deg);
+    transform-origin: 100% 50%;
+    animation-name: bg;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    z-index: 1;
+    border-radius: 5px;
+    transition-timing-function: cubic-bezier(.18,.89,.32,1.28);
+}
+.t-content:hover, .triangle:hover ~ .t-content {
+    transform: translate(0%, 50%) rotate(45deg);
+    transform-origin: 100% 50%;
+    right: 15px;
+    bottom: 15px;
+    font-size: x-large;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* portable smol tv's (phones) */
+@media screen and (max-width: 700px) {
+    #header {
+        position: relative;
+        flex-wrap: wrap;
+    }
+    #header > * {
+        width: calc(50% - 32px);
+        flex-direction: column;
+    }
+    body {
+        padding: 0;
+    }
+    #logo-container {
+        width: 100vw;
+        left: 0;
+        top: 0;
+        position: absolute;
+    }
+    #footer {
+        flex-direction: column;
+    }
+    .f-left, .f-right {
+        width: unset
+    }
+    .f-divider {
+        width: unset;
+        height: 1px;
+    }
+    .post {
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+    }
+    #container {
+        padding: 0;
+    }
+}
+
+
+/* big fucking screens */
+@media screen and (min-width: 1280px) {
+    body {
+        padding: 0 25%;
+    }
+}
+
+
+
+
