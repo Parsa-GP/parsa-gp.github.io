@@ -1,3 +1,5 @@
+let api = "/gh-blog";
+
 
 function home() {
     alert("Home!!")
@@ -16,9 +18,9 @@ function pall() {
 }
 
 
-/*async function fetchData() {
+async function fetchData() {
   try {
-    const response = await fetch(new URL('BLOGDATAURL/data.json', window.location.href).href);
+    const response = await fetch(new URL(api+'/data.json', window.location.href).href);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -82,7 +84,7 @@ function loopThroughData(data) {
     for (const img of images) {
         pimg = document.createElement("img")
         pimg.classList = ["p-img"];
-        pimg.src = "BLOGCDNURL/assets/"+img;
+        pimg.src = api+"/assets/"+img;
         pimg.loading="lazy"
         pimgs.appendChild(pimg)
     }
@@ -92,6 +94,13 @@ function loopThroughData(data) {
     cont.appendChild(post)
   }
 }
+document.addEventListener('DOMContentLoaded', () => {
+  let hue = 0;
+  const increment = 0.75;
 
+  window.addEventListener('scroll', () => {
+      hue = (hue + increment) % 360;
+      document.documentElement.style.setProperty('--hue', hue);
+  });
+});
 fetchData();
-*/
