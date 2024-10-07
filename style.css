@@ -289,7 +289,7 @@ a {
     cursor: pointer;
 }
 
-.quote {
+#quote {
     letter-spacing: 0.9px;
 }
 
@@ -309,7 +309,6 @@ a {
     border-radius: 5px;
 }
 .p-top {
-    
     display: flex;
 }
 .p-tags {
