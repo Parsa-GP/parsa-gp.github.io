@@ -1,0 +1,34 @@
+[
+    {
+        "type": "post",
+        "title": "Cute Puppy Playing",
+        "category": "Animals",
+        "date": "2024-04-25",
+        "images": ["cute-puppy-dogs-puppies-pictures-92-3905576986.jpg"],
+        "description": "A playful puppy enjoying a game of fetch in the park."
+      },
+      {
+        "type": "post",
+        "title": "Majestic Mountain Range",
+        "category": "Nature",
+        "date": "2024-04-18",
+        "images": ["majestic-mountain-peak-rising-to-the-sky-54619-1920x1200-1132642368.jpg", "majestic-mountain-peak-alexsava-3870614911.jpg"],
+        "description": "A towering mountain range reaching towards the clouds."
+      },
+      {
+        "type": "post",
+        "title": "Delicious Pizza",
+        "category": "Food",
+        "date": "2024-04-11",
+        "images": ["PulledPorkJalapenoPineapplePizzawithBaconandCilantro-1-1441994988.jpg"],
+        "description": "A mouthwatering pizza with melted cheese and fresh toppings."
+      },
+      {
+        "type": "post",
+        "title": "City Skyline at Night",
+        "category": "Travel",
+        "date": "2024-04-04",
+        "images": ["26376-2559269877.jpg"],
+        "description": "A dazzling cityscape illuminated by lights at night."
+      }
+]
