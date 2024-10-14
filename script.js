@@ -17,7 +17,6 @@ function pall() {
 
 
 async function fetchData() {
-	
 	try {
 		const response = await fetch(new URL('posts/posts.json', window.location.href).href)
 		if (!response.ok) {
@@ -75,8 +74,8 @@ function loopThroughData(data) {
 
 		post_tag_container.appendChild(post_tag)
 		post_tag_container.appendChild(post_time)
-		post_topbar.appendChild(post_tag_container)
 		post_topbar.appendChild(post_title)
+		post_topbar.appendChild(post_tag_container)
 		post.appendChild(post_topbar)
 
 
