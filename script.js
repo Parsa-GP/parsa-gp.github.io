@@ -115,7 +115,7 @@ function loopThroughData(data) {
 
 async function fetch_quotes() {
 	try {
-		const response = await fetch(new URL("quote.json", window.location.href).href)
+		const response = await fetch(new URL("quotes.json", window.location.href).href)
 		if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}`)
 		}

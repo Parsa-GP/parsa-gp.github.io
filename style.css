@@ -230,7 +230,7 @@ a {
 }
 .f-divider {
 	background: hsl(var(--hue), 100%, 50%);
-	width: 1px;
+	width: 1.2px;
 	box-shadow: 0 0 8px 1px hsl(var(--hue), 100%, 50%)
 }
 
