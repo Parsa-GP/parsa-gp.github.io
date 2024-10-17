@@ -22,46 +22,46 @@ async function fetchData() {
 
 
 function parseData(data) {
-	console.log(data)
-	post = document.createElement("div")
-	post.classList = "post"
+	const { title, category, date, images, description, content } = data
 
+	document.getElementsByTagName("title")[0].textContent = title+" - Parsa's Personal Blog"
 
+	post_title = document.getElementById("p-title")
 	post_title.innerHTML = title
 
-	post_tag_container.appendChild(post_tag)
+	post_topbar = document.getElementById("p-top")
+
+	post_tag_container = document.getElementById("p-tags")
+
+	post_tag = document.getElementById("p-tag")
+	post_tag.innerHTML = category
+
+	post_time = document.getElementById("p-time")
+	post_time.innerHTML = date
 
 
 	if (typeof content != "undefined") {
-		pcontent = document.createElement("a")
-		pcontent.onclick = function(){open_article(index)}
-		pcontent.classList = "p-text p-text-article"
+		pcontent = document.getElementById("p-text")
 		pcontent.innerHTML = content
 		post.appendChild(pcontent)
 	} else if (typeof description != "undefined") {
-		pdesc = document.createElement("span")
-		pdesc.classList = "p-text"
+		pdesc = document.getElementById("p-text")
 		pdesc.innerHTML = description
 		post.appendChild(pdesc)
 	}
-
-	if (images.length!=0) {
-		pimgs = document.createElement("div")
-		pimgs.classList = "p-images"
-		post.appendChild(pimgs)
-		
-		for (const img of images) {
-			pimg = document.createElement("img")
-			pimg.classList = "p-img"
-			pimg.src = "assets/post_media/"+img
-			pimg.loading="lazy"
-			pimgs.appendChild(pimg)
-		}
-
-	}
-
-	cont = document.getElementById("container")
-	cont.appendChild(post)
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+	let hue = 0
+	const increment = 0.75
+
+	window.addEventListener('scroll', () => {
+			hue = (hue + increment) % 360
+			document.documentElement.style.setProperty('--hue', hue)
+	})
+	share()
+})
+
+fetch_quotes("../quotes.json")
 fetchData()
+

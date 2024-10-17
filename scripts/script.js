@@ -113,27 +113,6 @@ function loopThroughData(data, post_json_id) {
 }
 
 
-async function fetch_quotes() {
-	try {
-		const response = await fetch(new URL("quotes.json", window.location.href).href)
-		if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`)
-		}
-		const data = await response.json()
-		console.log("Quotes fetched successfully!")
-		quote_loader(data)
-	} catch (error) {
-		console.error('Error fetching data:', error)
-	}
-	
-}
-
-function quote_loader(q) {
-	rand = q[Math.floor(Math.random() * q.length)]
-	qe = document.getElementById("quote")
-	qe.innerHTML = "“ "+ rand.text + "  ”\n<br><br>\n - "+rand.name+", "+rand.year+" "
-}
-
 
 document.addEventListener('DOMContentLoaded', () => {
 	let hue = 0
@@ -143,7 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			hue = (hue + increment) % 360
 			document.documentElement.style.setProperty('--hue', hue)
 	})
+	share()
 })
 fetchData()
-fetch_quotes()
+fetch_quotes("quotes.json")
 
