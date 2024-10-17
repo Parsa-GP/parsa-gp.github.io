@@ -18,7 +18,7 @@ function pall() {
 
 async function fetchData() {
 	try {
-		const response = await fetch(new URL('posts/posts.json', window.location.href).href)
+		const response = await fetch(new URL('post/posts.json', window.location.href).href)
 		if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}`)
 		}
@@ -26,13 +26,13 @@ async function fetchData() {
 		console.log("Data fetched successfully!")
 
 		for (const post_file of data) {
-			const response = await fetch(new URL("posts/"+post_file, window.location.href).href)
+			const response = await fetch(new URL("post/"+post_file+".json", window.location.href).href)
 			if (!response.ok) {
 				throw new Error(`HTTP error! status: ${response.status}`)
 			}
 			const posts_data = await response.json()
 			console.log("Data fetched successfully!")
-			loopThroughData(posts_data)
+			loopThroughData(posts_data, post_file)
 		}
 		
 	} catch (error) {
@@ -40,12 +40,12 @@ async function fetchData() {
 	}
 }
 
-function open_article(id) {
-	window.location.href = "post.html?a="+id
+function open_article(id, index) {
+	window.location.href = "post?"+id+":"+index
 }
 
 
-function loopThroughData(data) {
+function loopThroughData(data, post_json_id) {
 	for (const [index, item] of data.entries()) {
 		const { title, category, date, images, description, content } = item
 
@@ -81,7 +81,7 @@ function loopThroughData(data) {
 
 		if (typeof content != "undefined") {
 			pcontent = document.createElement("a")
-			pcontent.onclick = function(){open_article(index)}
+			pcontent.onclick = function(){open_article(post_json_id, index)}
 			pcontent.classList = "p-text p-text-article"
 			pcontent.innerHTML = content
 			post.appendChild(pcontent)
@@ -100,7 +100,7 @@ function loopThroughData(data) {
 			for (const img of images) {
 				pimg = document.createElement("img")
 				pimg.classList = "p-img"
-				pimg.src = "assets/"+img
+				pimg.src = "assets/post_media/"+img
 				pimg.loading="lazy"
 				pimgs.appendChild(pimg)
 			}

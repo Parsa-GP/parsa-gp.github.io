@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume, hopefully</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="stylesheet/style.css" rel="stylesheet">
+    <link href="stylesheet/home.css" rel="stylesheet">
     <!--<link href="https://mshaugh.github.io/nerdfont-webfonts/build/firacode-nerd-font.css" rel="stylesheet">-->
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 </head>
 <body>
-
     <div id="logo-container">
-        <span class="linkedin" onclick="linkedin()"></span>
-        <span class="github" onclick="github()"></span>
-        <span class="stackof" onclick="stackof()"></span>
+        <div class="social" id="social-left">
+            <a href="#" target="_blank" id="linkedin"></a>
+            <a href="#" target="_blank" id="github"></a>
+            <a href="#" target="_blank" id="stackof"></a>
+        </div>
         <div id="logo">
             <span>󰜥 P4r5a@* 󰍴</span>
             <span>- Pa#$a6^ 󰜥</span>
             <span>~ ParsaGP ~</span>
         </div>
-        <span class="mastadon" onclick="mastadon()">󰫑</span>
-        <span class="matrix" onclick="matrix()">󰘨</span>
-        <span class="email" onclick="email()"></span>
+        <div class="social" id="social-right">
+            <a href="#" target="_blank" id="mastadon">󰫑</a>
+            <a href="#" target="_blank" id="matrix">󰘨</a>
+            <a href="#" target="_blank" id="email"></a>
+        </div>
     </div>
 
     <ul id="header">
@@ -41,11 +45,9 @@
         </div>
         <div class="f-divider"></div>
         <div class="f-right">
-            󰈹 The site works fine on desktop firefox and lil bit laggy buggy on
-            firefox mobile.<br><br>
-
-            󰔃 If you are not from firefox and experiencing bad ui, fuck you.
-            i ain't gonna do shit.<br><br>
+            󰈹 The site works fine on firefox desktop. So
+            if you are not from firefox and experiencing bugs, fuck you.
+            i ain't gonna fix shit.<br><br>
 
             <i>it's broken</i> my ass
         </div>

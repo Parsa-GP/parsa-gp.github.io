@@ -15,7 +15,7 @@ the maximum supported screen width is 320px so it should be fine.
 <i class="nf nf-custom-vim"></i> */
 @font-face {
 	font-family: "FiraCode Nerd Font";
-	src: url("fonts/FiraCodeNerdFontMono-Regular.ttf") format("truetype");
+	src: url("../assets/fonts/FiraCodeNerdFontMono-Regular.ttf") format("truetype");
 	font-stretch: normal;
 	font-style: normal;
 	font-weight: 700;
@@ -63,7 +63,7 @@ html::before {
 	z-index: -1;
 	width: 500vw;
 	aspect-ratio: 1/1;
-	background-image: url("bg.webp");
+	background-image: url("../assets/bg.webp");
 	transform: rotate(20deg) scale(1.45);
 	display: block;
 	position: fixed;
@@ -72,7 +72,7 @@ html::before {
 html {
 	margin: 0;
 	padding: 0;
-
+	min-height: 100vh;
 	cursor: default;
 
 	transition-duration: 0.2s;
@@ -90,24 +90,76 @@ html {
 	hsl(var(--hue), 70%, 30%) 75%,
 	hsl(var(--hue), 70%, 60%) 90%,
 	hsl(var(--hue), 70%, 30%) 100%);
+	line-height: 1.6;
 }
 body {
 	padding: 0 10%;
 	padding-top: 10px;
 	overflow-x: hidden;
 }
+
+button, .btn {
+	background-color: var(--shadow);
+	border: 1px solid hsl(var(--hue), 100%, 50%);
+	padding: 4px 8px;
+	border-radius: 5px;
+	cursor: pointer;
+	max-width: fit-content;
+	font-size: medium;
+	backdrop-filter: var(--bdfilter);
+}
+
+button:hover, .btn:hover {
+	background-color: hsl(var(--hue), 100%, 50%);
+}
+
+code {
+	background-color: var(--shadow);
+	border-radius: 5px;
+	color: hsl(var(--hue), 100%, 50%);
+	padding: 5px 8px;
+	cursor: text;
+	backdrop-filter: var(--bdfilter);
+}
+
+pre {
+	border: 1px solid hsl(var(--hue), 100%, 50%);
+	backdrop-filter: var(--bdfilter);
+	background-color: var(--shadow);
+	padding: 8px;
+	max-width: fit-content;
+	cursor: text;
+}
+
+kbd {
+	backdrop-filter: var(--bdfilter);
+	background-color: var(--shadow);
+	border: 1px solid hsl(var(--hue), 100%, 50%);
+	border-radius: 5px;
+	box-shadow: 1px 1px 0 hsl(var(--hue), 100%, 50%);
+	padding: 2px 8px;
+}
+h1 {
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h2 {
+	font-family: cursive;
+}
+
 #logo-container {
 	position: sticky;
 	text-align: center;
-	/*! aspect-ratio: 3/1; */
+	aspect-ratio: 3/1;
 	backdrop-filter: var(--bdfilter);
 	padding: 15px 0;
-	border-radius: 5px;
 	font-size: xx-large;
-	box-shadow: 0 0 20px var(--shadow);
+	/*! border: 1px solid #dab6ff21; */
+	box-shadow: 0 0 10px 5px var(--shadow);
 	text-shadow: 2px 2px 8px hsl(var(--hue), 100%, 50%);
     display: flex;
 	justify-content: space-around;
+	align-items: center;
+	z-index: 1;
 }
 #logo-container::before {
 	content: " ";
@@ -118,6 +170,47 @@ body {
 	left: 0;
 	z-index: -1;
 }
+.social {
+	padding-right: 8px;
+	cursor: pointer;
+	display: flex;
+	flex-wrap: wrap;
+}
+.social > * {
+	flex-basis: calc(100% / 2);
+}
+.social > *:link {
+	text-decoration: none;
+}
+#social-right > * {
+	text-shadow: -2px 2px 8px hsl(var(--hue), 100%, 50%);
+}
+
+#linkedin:hover {
+	color: lightskyblue;
+}
+
+#github:hover {
+	color: silver;
+}
+
+#stackof:hover {
+	color: orange;
+}
+
+#mastadon:hover {
+	color: rgb(190, 173, 230);
+}
+
+#matrix:hover {
+	color: silver;
+}
+
+#email:hover {
+	color: lightgreen;
+}
+
+
 #logo > * {
 	mix-blend-mode: screen;
 }
@@ -156,7 +249,7 @@ body {
 	backdrop-filter: var(--bdfilter);
 	padding: 8px 16px;
 	/*! border: 1px solid #dab6ff21; */
-	box-shadow: 0 0 10px var(--shadow);
+	box-shadow: 0 0 10px 5px var(--shadow);
 	justify-content: center;
 	grid-gap: 5px;
 	margin-top: 50px;
@@ -169,10 +262,6 @@ body {
 
 #header > li:hover {
 	text-decoration: underline;
-}
-#logo-container > span {
-	padding-right: 8px;
-	cursor: pointer;
 }
 
 
@@ -277,20 +366,21 @@ a {
 	backdrop-filter: var(--bdfilter);
 	background: var(--shadow);
 	padding: 12px 16px;
-	box-shadow: 0 0 10px var(--shadow);
+	box-shadow: 0 0 10px 5px var(--shadow);
 }
 .post::after {
 	content: '';
-	border-style: double;
+	border-style: solid;
 	border-width: 0;
 	border-color: transparent hsl(var(--hue), 100%, 50%) transparent transparent;
 	right: 0;
 	top: 0;
 	position: absolute;
-	transition-duration: .1s;
+	transition-duration: .2s;
+	transition-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
 }
 .post:hover::after {
-	border-width: 0 50px 50px 0;
+	border-width: 0 40px 40px 0;
 	transition-duration: .1s;
 }
 .p-top {
@@ -337,10 +427,11 @@ a {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	padding: 6px 2px;
 }
 .p-images {
 	min-height: 100px;
-	box-shadow: 0 0 10px var(--shadow);
+	box-shadow: 0 0 10px 5px var(--shadow);
 	border: 1px solid hsl(var(--hue), 100%, 50%);
 	background: var(--shadow);
 	margin: 8px 0;
@@ -349,6 +440,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	grid-gap: 12px;
+
 }
 .p-img {
 	width: auto;
@@ -446,6 +538,9 @@ a {
 	.button {
 		width: calc(100% - 32px) !important;
 	}
+	#logo-container {
+		aspect-ratio: unset;
+	}
 }
 
 /* portable tv (phones) */
@@ -453,19 +548,21 @@ a {
 	#header {
 		position: relative;
 		flex-wrap: wrap;
+		margin-top: 20px;
 	}
 	#header > * {
-		width: calc(50% - 32px);
-		flex-direction: column;
+		width: 40%;
+		padding: 12px 16px;
 	}
 	body {
 		padding: 0;
+		padding-top: 10px;
 	}
 	#logo-container {
 		width: 100vw;
 		left: 0;
 		top: 0;
-		position: absolute;
+		aspect-ratio: unset;
 	}
 	#footer {
 		flex-direction: column;

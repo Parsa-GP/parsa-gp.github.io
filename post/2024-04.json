@@ -1,0 +1,42 @@
+[
+	{
+		"type": "post",
+		"title": "Cute Puppy Playing",
+		"category": "Animals",
+		"date": "2024-04-25",
+		"images": ["puppy.jpg"],
+		"description": "A playful puppy enjoying a game of fetch in the park."
+	},
+	{
+		"type": "article",
+		"category": "Food",
+		"date":"2024-04-02",
+		"images":[],
+		"title": "LLLLLLLLLLLLorem ipsum dolor sit amet!",
+		"content": "Lorem ipsum dolor sit amet, no mea assentior conceptam. Ut cum quidam iuvaret, modus tractatos ex vel."
+	},
+	{
+		"type": "post",
+		"title": "Majestic Mountain Range",
+		"category": "Nature",
+		"date": "2024-04-18",
+		"images": ["mountain.jpg", "snowy_mountain.jpg"],
+		"description": "A towering mountain range reaching towards the clouds."
+	},
+	{
+		"type": "post",
+		"title": "Delicious Pizza",
+		"category": "Food",
+		"date": "2024-04-11",
+		"images": ["pizza.jpg"],
+		"description": "A mouthwatering pizza with melted cheese and fresh toppings."
+	},
+	{
+		"type": "post",
+		"title": "City Skyline at Night",
+		"category": "Travel",
+		"date": "2024-04-04",
+		"images": ["city.jpg"],
+		"description": "A dazzling cityscape illuminated by lights at night."
+	}
+]
