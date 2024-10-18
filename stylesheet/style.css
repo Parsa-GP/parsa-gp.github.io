@@ -183,10 +183,13 @@ h2 {
 	cursor: pointer;
 	display: flex;
 	flex-wrap: wrap;
+	gap: 4px;
+	justify-content: center;
 }
 
-.social>* {
+.social > * {
 	flex-basis: calc(100% / 2);
+	height: 40px;
 }
 
 .social>*:link {
@@ -493,19 +496,9 @@ h2 {
 		flex-direction: column;
 		flex-wrap: wrap;
 		flex-direction: row;
+		justify-content: space-around;
 	}
 
-	.post {
-		width: calc(50% - 55px);
-		height: fit-content;
-	}
 
-	.p-images {
-		max-height: 20vh;
-	}
-
-	.p-img {
-		max-height: 60vh;
-	}
 
 }

@@ -4,6 +4,7 @@
 	background: var(--shadow);
 	padding: 12px 16px;
 	box-shadow: 0 0 10px 5px var(--shadow);
+	transform: scale(1);
 }
 .post::after {
 	content: '';
@@ -15,6 +16,9 @@
 	position: absolute;
 	transition-duration: .2s;
 	transition-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+}
+.post:hover {
+	transform: scale(1.025);
 }
 .post:hover::after {
 	border-width: 0 40px 40px 0;
@@ -97,4 +101,20 @@
 .p-text-article {
 	mask-image: linear-gradient(to bottom, white, transparent);
 	user-select: none;
+}
+
+@media screen and (min-width: 1900px) {
+	.post {
+		width: calc(50% - 52px);
+		height: fit-content;
+	}
+
+	.p-images {
+		max-height: 20vh;
+	}
+
+	.p-img {
+		max-height: 60vh;
+	}
+	
 }
