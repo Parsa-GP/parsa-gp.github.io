@@ -40,7 +40,6 @@
 
 * {
 	margin: 0;
-	padding: 0;
 
 	color: white;
 	cursor: default;
@@ -101,8 +100,7 @@ a {
 	cursor: pointer;
 }
 
-button,
-.btn {
+button, .btn {
 	background-color: var(--shadow);
 	border: 1px solid hsl(var(--hue), 100%, 50%);
 	padding: 4px 8px;
@@ -482,7 +480,7 @@ h2 {
 /* big fucking screens */
 @media screen and (min-width: 1280px) {
 	body {
-		padding: 0 25%;
+		padding: 0 calc(25% / 2);
 	}
 }
 

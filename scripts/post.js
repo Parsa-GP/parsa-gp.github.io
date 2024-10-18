@@ -22,7 +22,7 @@ async function fetchData() {
 
 
 function parseData(data) {
-	const { title, category, date, images, description, content } = data
+	const { title, category, date, description, content } = data
 
 	document.getElementsByTagName("title")[0].textContent = title+" - Parsa's Personal Blog"
 
@@ -40,15 +40,15 @@ function parseData(data) {
 	post_time.innerHTML = date
 
 
+	ptext = document.getElementById("p-text")
 	if (typeof content != "undefined") {
-		pcontent = document.getElementById("p-text")
-		pcontent.innerHTML = content
-		post.appendChild(pcontent)
+		post_text = content
 	} else if (typeof description != "undefined") {
-		pdesc = document.getElementById("p-text")
-		pdesc.innerHTML = description
-		post.appendChild(pdesc)
+		post_text = description
 	}
+	var converter = new showdown.Converter()
+	ptext.innerHTML = converter.makeHtml(post_text)
+	post.appendChild(ptext)
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			hue = (hue + increment) % 360
 			document.documentElement.style.setProperty('--hue', hue)
 	})
-	share()
 })
 
 fetch_quotes("../quotes.json")
