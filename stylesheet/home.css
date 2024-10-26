@@ -6,6 +6,7 @@
 	box-shadow: 0 0 10px 5px var(--shadow);
 	transform: scale(1);
 }
+
 .post::after {
 	content: '';
 	border-style: solid;
@@ -17,23 +18,28 @@
 	transition-duration: .2s;
 	transition-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
 }
+
 .post:hover {
 	transform: scale(1.025);
 }
+
 .post:hover::after {
 	border-width: 0 40px 40px 0;
 	transition-duration: .3s;
 }
+
 .p-top {
 	display: flex;
 	margin-bottom: 8px;
 	justify-content: space-between;
 }
+
 .p-tags {
 	display: flex;
 	width: fit-content;
 	right: 12px;
 }
+
 .p-tag::before {
 	content: "#";
 	padding-left: 5px;
@@ -42,16 +48,19 @@
 	display: inline-block;
 	padding-right: 5px;
 }
+
 .p-time, .p-tag {
 	display: flex;
 	align-items: center;
 }
+
 .p-tag::after {
 	content: "/";
 	padding-left: 5px;
 	padding-right: 3px;
 	color: gray;
 }
+
 .p-time::before {
 	content: "";
 	padding-left: 5px;
@@ -70,6 +79,7 @@
 	white-space: nowrap;
 	padding: 6px 2px;
 }
+
 .p-images {
 	min-height: 100px;
 	box-shadow: 0 0 10px 5px var(--shadow);
@@ -81,8 +91,8 @@
 	display: flex;
 	flex-direction: column;
 	grid-gap: 12px;
-
 }
+
 .p-img {
 	width: auto;
 	max-height: 60vh;
@@ -110,6 +120,7 @@
 	}	
 }
 
+/* big fucking screens */
 @media screen and (min-width: 1900px) {
 	.post {
 		width: calc(50% - 52px);

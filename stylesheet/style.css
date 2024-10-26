@@ -2,15 +2,18 @@
 @import url(../stylesheet/fontawesome/regular.min.css);
 @import url(../stylesheet/fontawesome/solid.min.css);
 
-
+/*
+ * Variables
+ */
 :root {
 	--shadow: #111a;
 	--bdfilter: blur(8px) opacity(0.95) brightness(0.9);
-
 	--hue: 280;
 }
 
-
+/*
+ * Keyframes
+ */
 @keyframes glitch {
 	0% {
 		transform: translate(-2px, -2px);
@@ -33,33 +36,16 @@
 	}
 }
 
-
+/*
+ * Tags
+ */
 * {
 	margin: 0;
-
 	color: white;
 	cursor: default;
-
 	transition-duration: 0.2s;
-
-	/*animation-name: text;
-	animation-duration: 10s;
-	animation-iteration-count: infinite;*/
-
 	font-family: "Fira Code", "Font Awesome 6 Free", "Font Awesome 6 Brands";
 	scrollbar-color: hsl(var(--hue), 100%, 50%) var(--shadow);
-}
-
-html::before {
-	content: "";
-	z-index: -1;
-	width: 500vw;
-	aspect-ratio: 1/1;
-	background-image: url("../assets/bg.webp");
-	transform: rotate(20deg) scale(1.45);
-	display: block;
-	position: fixed;
-	background-size: 128px;
 }
 
 html {
@@ -67,10 +53,9 @@ html {
 	padding: 0;
 	min-height: 100vh;
 	cursor: default;
-
 	transition-duration: 0.2s;
+	line-height: 1.6;
 
-	font-family: "FiraCode Nerd Font", "DejaVu Font", monospace;
 	animation-name: bg;
 	animation-duration: 8s;
 	animation-iteration-count: infinite;
@@ -83,7 +68,18 @@ html {
 			hsl(var(--hue), 70%, 30%) 75%,
 			hsl(var(--hue), 70%, 60%) 90%,
 			hsl(var(--hue), 70%, 30%) 100%);
-	line-height: 1.6;
+}
+
+html::before {
+	content: "";
+	z-index: -1;
+	width: 500vw;
+	aspect-ratio: 1/1;
+	background-image: url("../assets/bg.webp");
+	transform: rotate(20deg) scale(1.45);
+	display: block;
+	position: fixed;
+	background-size: 128px;
 }
 
 body {
@@ -109,8 +105,7 @@ button, .btn {
 	
 }
 
-button:hover,
-.btn:hover {
+button:hover, .btn:hover {
 	background-color: hsl(var(--hue), 100%, 50%);
 }
 
@@ -149,13 +144,16 @@ h2 {
 	font-family: cursive;
 }
 
+
+/*
+ * Glitchy Logo
+ */
 #logo-container {
 	position: sticky;
 	text-align: center;
 	backdrop-filter: var(--bdfilter);
 	padding: 15px 0;
 	font-size: xx-large;
-	/*! border: 1px solid #dab6ff21; */
 	box-shadow: 0 0 10px 5px var(--shadow);
 	text-shadow: 2px 2px 8px hsl(var(--hue), 100%, 50%);
 	display: flex;
@@ -189,7 +187,6 @@ h2 {
 #social-right > * {
 	text-shadow: -2px 2px 8px hsl(var(--hue), 100%, 50%);
 }
-
 
 #logo {
 	font-size: 2em;
@@ -227,7 +224,11 @@ h2 {
 	text-shadow: 0 0 10px white;
 }
 
-#header {
+
+/*
+ * Header (Navigaton buttons)
+ */
+ #header {
 	margin: 20px 0;
 	display: flex;
 	position: sticky;
@@ -269,6 +270,9 @@ h2 {
 }
 
 
+/*
+ * Footer (Footnotes & quote)
+ */
 #footer {
 	width: calc(100vw - 50px);
 	padding: 20px 25px;
@@ -284,7 +288,7 @@ h2 {
 	background-color: rgba(33,33,33, .75);
 }
 
-#footer>#copyright {
+#footer > #copyright {
 	text-align: center;
 	display: block;
 	text-shadow: 0 0 8px hsl(var(--hue), 100%, 50%);
@@ -303,7 +307,6 @@ h2 {
 }
 
 .f-right {
-
 	width: calc(50% - 4px);
 	padding: 8px;
 }
@@ -315,7 +318,7 @@ h2 {
 }
 
 
-#container {
+#post-container {
 	padding: 2px 5px;
 	min-height: 50vh;
 	margin-bottom: 20px;
@@ -325,14 +328,17 @@ h2 {
 	min-height: calc(100vh - 200px);
 }
 
-
-
-
+/*
+ * Quote
+ */
 #footer #quote {
 	letter-spacing: 0.9px;
 }
 
 
+/*
+ * Work in Progress thingy
+ */
 .triangle {
 	width: 0;
 	height: 0;
@@ -368,8 +374,7 @@ h2 {
 	text-shadow: 1px 0 0 black, 0 1px 0 black, -1px 0 0 black, 0 -1px 0 black;
 }
 
-.wip:hover,
-.triangle:hover~.wip {
+.wip:hover, .triangle:hover ~ .wip {
 	transform: translate(0%, 50%) rotate(45deg);
 	transform-origin: 100% 50%;
 	right: 15px;
@@ -383,23 +388,19 @@ h2 {
 	#social {
 		position: relative;
 	}
-
 	#header {
 		margin-top: 120px;
 		flex-wrap: unset;
 		align-items: center;
 		gap: 8px;
 	}
-
 	.spacer {
 		flex-grow: unset !important;
 		width: 30%;
 	}
-
 	.button {
 		width: calc(50% - 32px) !important;
 	}
-
 	#logo {
 		font-size: 1.5em;
 	}
@@ -413,33 +414,28 @@ h2 {
 		margin-top: 20px;
 		gap: 5px;
 	}
-
 	#header>* {
 		width: 40%;
 		padding: 12px 16px;
 	}
-
 	body {
 		padding: 0;
 		padding-top: 10px;
 	}
-
 	#logo-container {
 		width: 100vw;
 		left: 0;
 		top: 0;
 	}
-
-	#container {
+	#post-container {
 		padding: 0;
 	}
-
 	#header > .btn {
 		border-radius: 0;
 	}
 }
 
-/* big fucking screens */
+/* big screens */
 @media screen and (min-width: 1280px) {
 	body {
 		padding: 0 calc(25% / 2);
@@ -451,8 +447,7 @@ h2 {
 	body {
 		padding: 0 15%;
 	}
-
-	#container {
+	#post-container {
 		flex-direction: column;
 		flex-wrap: wrap;
 		flex-direction: row;

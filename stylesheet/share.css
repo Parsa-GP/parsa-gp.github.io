@@ -1,5 +1,5 @@
- /** Social Button CSS **/
- /* https://github.com/gschier/html-share-buttons */
+/** Social Button CSS **/
+/* https://github.com/gschier/html-share-buttons */
 
 :root {
 	--twitter-color: #5ad;
@@ -52,52 +52,46 @@
 	opacity: 0;
 	transition-duration: 0.2s;
 }
+
 .share-btns > a:hover::before {
 	opacity: 1;
 	transition-duration: 0.2s;
 }
 
+.share-btns > a.twitter::before { content: ''; }
 .share-btns > a.twitter {
 	border: 1px solid var(--twitter-color);
 	box-shadow: inset 0 0 5px var(--twitter-color), 0 0 8px var(--twitter-color);
 }
-.share-btns > a.twitter::before {
-	content: '';
-}
+
+.share-btns > a.facebook::before { content: ''; }
 .share-btns > a.facebook {
 	border: 1px solid var(--facebook-color);
 	box-shadow: inset 0 0 5px var(--facebook-color), 0 0 8px var(--facebook-color);
 }
-.share-btns > a.facebook::before {
-	content: '';
-}
+
+.share-btns > a.reddit::before { content: ''; }
 .share-btns > a.reddit {
 	border: 1px solid var(--reddit-color);
 	box-shadow: inset 0 0 5px var(--reddit-color), 0 0 8px var(--reddit-color);
 }
-.share-btns > a.reddit::before {
-	content: '';
-}
+
+.share-btns > a.hackernews::before { content: ''; }
 .share-btns > a.hackernews {
 	border: 1px solid var(--hackernews-color);
 	box-shadow: inset 0 0 5px var(--hackernews-color), 0 0 8px var(--hackernews-color);
 }
-.share-btns > a.hackernews::before {
-	content: '';
-}
+
+.share-btns > a.linkedin::before { content: ''; }
 .share-btns > a.linkedin {
 	border: 1px solid var(--linkedin-color);
 	box-shadow: inset 0 0 5px var(--linkedin-color), 0 0 8px var(--linkedin-color);
 }
-.share-btns > a.linkedin::before {
-	content: '';
-}
+
+.share-btns > a.email::before { content: ''; }
 .share-btns > a.email {
 	border: 1px solid var(--email-color);
 	box-shadow: inset 0 0 5px var(--email-color), 0 0 8px var(--email-color);
-}
-.share-btns > a.email::before {
-	content: '';
 }
 
 .share-btns > a.twitter:hover { background: var(--twitter-color); }

@@ -1,7 +1,5 @@
 async function fetchData() {
-	const post_file = new URL(document.location.href).search.substring(1);
-
-	const post_info = post_file.split(":")
+	const post_info = new URL(document.location.href).search.substring(1).split(":")
 	const post_filename = post_info[0]
 	const post_id = post_info[1]
 	
@@ -28,14 +26,10 @@ function parseData(data) {
 
 	post_title = document.getElementById("p-title")
 	post_title.innerHTML = title
-
 	post_topbar = document.getElementById("p-top")
-
 	post_tag_container = document.getElementById("p-tags")
-
 	post_tag = document.getElementById("p-tag")
 	post_tag.innerHTML = category
-
 	post_time = document.getElementById("p-time")
 	post_time.innerHTML = date
 

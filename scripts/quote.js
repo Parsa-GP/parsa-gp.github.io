@@ -10,7 +10,6 @@ async function fetch_quotes(fn) {
 	} catch (error) {
 		console.error('Error fetching data:', error)
 	}
-	
 }
 
 function quote_loader(q) {

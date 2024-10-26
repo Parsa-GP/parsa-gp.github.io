@@ -107,11 +107,10 @@ function loopThroughData(data, post_json_id) {
 
 		}
 
-		cont = document.getElementById("container")
+		cont = document.getElementById("post-container")
 		cont.appendChild(post)
 	}
 }
-
 
 
 document.addEventListener('DOMContentLoaded', () => {

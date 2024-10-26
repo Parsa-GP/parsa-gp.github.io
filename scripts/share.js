@@ -15,4 +15,3 @@ hackernews.href = "https://news.ycombinator.com/submitlink?u="+url+"&t=This+arti
 linkedin.href = "https://www.linkedin.com/shareArticle?url="+url+"&title=This+article+BANGS!"
 email.href = "mailto:?subject=This+article+BANGS!&body="+url
 
-
