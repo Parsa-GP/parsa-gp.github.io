@@ -97,7 +97,7 @@
 	box-shadow: inset 0 0 5px var(--email-color), 0 0 8px var(--email-color);
 }
 .share-btns > a.email::before {
-	content: '';
+	content: '';
 }
 
 .share-btns > a.twitter:hover { background: var(--twitter-color); }

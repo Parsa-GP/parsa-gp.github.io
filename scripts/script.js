@@ -122,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			hue = (hue + increment) % 360
 			document.documentElement.style.setProperty('--hue', hue)
 	})
-	share()
 })
 fetchData()
 fetch_quotes("quotes.json")

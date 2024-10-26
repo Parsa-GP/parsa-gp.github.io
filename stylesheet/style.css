@@ -1,18 +1,13 @@
+@import url(../stylesheet/fontawesome/brands.min.css);
+@import url(../stylesheet/fontawesome/regular.min.css);
+@import url(../stylesheet/fontawesome/solid.min.css);
+
+
 :root {
 	--shadow: #111a;
 	--bdfilter: blur(8px) opacity(0.95) brightness(0.9);
 
 	--hue: 280;
-}
-
-/* @import "https://www.nerdfonts.com/assets/css/webfont.css"
-<i class="nf nf-custom-vim"></i> */
-@font-face {
-	font-family: "FiraCode Nerd Font";
-	src: url("../assets/fonts/FiraCodeNerdFontMono-Regular.ttf") format("truetype");
-	font-stretch: normal;
-	font-style: normal;
-	font-weight: 700;
 }
 
 
@@ -51,7 +46,7 @@
 	animation-duration: 10s;
 	animation-iteration-count: infinite;*/
 
-	font-family: "FiraCode Nerd Font";
+	font-family: "Fira Code", "Font Awesome 6 Free", "Font Awesome 6 Brands";
 	scrollbar-color: hsl(var(--hue), 100%, 50%) var(--shadow);
 }
 
