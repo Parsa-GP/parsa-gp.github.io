@@ -52,7 +52,7 @@ function parseData(data) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	let hue = 0
+	let hue = 280
 	const increment = 0.75
 
 	window.addEventListener('scroll', () => {

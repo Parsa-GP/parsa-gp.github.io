@@ -2,10 +2,10 @@
  /* https://github.com/gschier/html-share-buttons */
 
 :root {
-	--twitter-color: #5be;
+	--twitter-color: #5ad;
 	--facebook-color: #3B5998;
 	--reddit-color: #f60;
-	--hackernews-color: #f60;
+	--hackernews-color: #f50;
 	--linkedin-color: #4875B4;
 	--email-color: #444;
 }
@@ -29,44 +29,80 @@
 	margin: 0 0.2em;
 	text-decoration: none;
 	backdrop-filter: var(--bdfilter);
+	display: grid;
+	grid-auto-flow: column;
 }
 
 .share-btns > a:focus,
 .share-btns > a:hover {
 	box-shadow: 0 0 8px white;
+	padding-left: 24px;
 }
 
 .share-btns > a:active {
 	color: #e2e2e2;
 }
+
+.share-btns > a::before {
+	position: absolute;
+	top: -6px;
+  	left: 5px;
+	font-size: x-large;
+	padding-right: 4px;
+	opacity: 0;
+	transition-duration: 0.2s;
+}
+.share-btns > a:hover::before {
+	opacity: 1;
+	transition-duration: 0.2s;
+}
+
 .share-btns > a.twitter {
 	border: 1px solid var(--twitter-color);
 	box-shadow: inset 0 0 5px var(--twitter-color), 0 0 8px var(--twitter-color);
+}
+.share-btns > a.twitter::before {
+	content: '';
 }
 .share-btns > a.facebook {
 	border: 1px solid var(--facebook-color);
 	box-shadow: inset 0 0 5px var(--facebook-color), 0 0 8px var(--facebook-color);
 }
+.share-btns > a.facebook::before {
+	content: '';
+}
 .share-btns > a.reddit {
 	border: 1px solid var(--reddit-color);
 	box-shadow: inset 0 0 5px var(--reddit-color), 0 0 8px var(--reddit-color);
+}
+.share-btns > a.reddit::before {
+	content: '';
 }
 .share-btns > a.hackernews {
 	border: 1px solid var(--hackernews-color);
 	box-shadow: inset 0 0 5px var(--hackernews-color), 0 0 8px var(--hackernews-color);
 }
+.share-btns > a.hackernews::before {
+	content: '';
+}
 .share-btns > a.linkedin {
 	border: 1px solid var(--linkedin-color);
 	box-shadow: inset 0 0 5px var(--linkedin-color), 0 0 8px var(--linkedin-color);
+}
+.share-btns > a.linkedin::before {
+	content: '';
 }
 .share-btns > a.email {
 	border: 1px solid var(--email-color);
 	box-shadow: inset 0 0 5px var(--email-color), 0 0 8px var(--email-color);
 }
+.share-btns > a.email::before {
+	content: '';
+}
 
-.share-btns > a.twitter:hover { background: #5be; }
-.share-btns > a.facebook:hover { background: #3B5998; }
-.share-btns > a.reddit:hover { background: #f60; }
-.share-btns > a.hackernews:hover { background: #f60; }
-.share-btns > a.linkedin:hover { background: #4875B4; }
-.share-btns > a.email:hover { background: #444; }
+.share-btns > a.twitter:hover { background: var(--twitter-color); }
+.share-btns > a.facebook:hover { background: var(--facebook-color); }
+.share-btns > a.reddit:hover { background: var(--reddit-color); }
+.share-btns > a.hackernews:hover { background: var(--hackernews-color); }
+.share-btns > a.linkedin:hover { background: var(--linkedin-color); }
+.share-btns > a.email:hover { background: var(--email-color); }

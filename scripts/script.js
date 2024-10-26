@@ -82,7 +82,7 @@ function loopThroughData(data, post_json_id) {
 		if (typeof content != "undefined") {
 			pcontent = document.createElement("a")
 			pcontent.onclick = function(){open_article(post_json_id, index)}
-			pcontent.classList = "p-text p-text-article"
+			pcontent.classList = "p-text"
 			pcontent.innerHTML = content
 			post.appendChild(pcontent)
 		} else if (typeof description != "undefined") {
@@ -115,7 +115,7 @@ function loopThroughData(data, post_json_id) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-	let hue = 0
+	let hue = 280
 	const increment = 0.75
 
 	window.addEventListener('scroll', () => {
