@@ -165,7 +165,6 @@ h2 {
 	padding: 15px 0;
 	font-size: xx-large;
 	box-shadow: 0 0 10px 5px var(--shadow);
-	text-shadow: 2px 2px 8px hsl(var(--hue), 100%, 50%);
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -187,7 +186,7 @@ h2 {
 	height: 40px;
 }
 .social > *:hover {
-	transform: scale(1.2);
+	transform: scale(1.1);
 }
 
 .social > *:link {
@@ -195,7 +194,16 @@ h2 {
 }
 
 #social-right > * {
-	text-shadow: -2px 2px 8px hsl(var(--hue), 100%, 50%);
+	text-shadow: -2px 2px 10px hsl(var(--hue), 100%, 50%);
+}
+#social-right > *:hover {
+	text-shadow: -2px 2px 5px hsl(var(--hue), 100%, 50%);
+}
+#social-left > * {
+	text-shadow: 2px 2px 10px hsl(var(--hue), 100%, 50%);
+}
+#social-left > *:hover {
+	text-shadow: 2px 2px 5px hsl(var(--hue), 100%, 50%);
 }
 
 #logo {

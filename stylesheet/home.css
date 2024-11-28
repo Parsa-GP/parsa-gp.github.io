@@ -44,9 +44,9 @@
 	content: "";
 	padding-left: 5px;
 	padding-right: 0px;
-	font-size: 24px;
+	font-size: 22px;
 	display: inline-block;
-	padding-right: 5px;
+	padding-right: 7px;
 }
 
 .p-time, .p-tag {
@@ -65,9 +65,9 @@
 	content: "󱑆";
 	padding-left: 5px;
 	padding-right: 0px;
-	font-size: 24px;
+	font-size: 22px;
 	display: inline-block;
-	padding-right: 5px;
+	padding-right: 7px;
 }
 
 .p-title {
