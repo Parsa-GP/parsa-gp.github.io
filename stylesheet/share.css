@@ -88,7 +88,7 @@
 	box-shadow: inset 0 0 5px var(--linkedin-color), 0 0 8px var(--linkedin-color);
 }
 
-.share-btns > a.email::before { content: ''; }
+.share-btns > a.email::before { content: ''; }
 .share-btns > a.email {
 	border: 1px solid var(--email-color);
 	box-shadow: inset 0 0 5px var(--email-color), 0 0 8px var(--email-color);

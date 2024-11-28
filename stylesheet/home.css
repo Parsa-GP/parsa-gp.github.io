@@ -41,7 +41,7 @@
 }
 
 .p-tag::before {
-	content: "#";
+	content: "";
 	padding-left: 5px;
 	padding-right: 0px;
 	font-size: 24px;
@@ -62,7 +62,7 @@
 }
 
 .p-time::before {
-	content: "";
+	content: "󱑆";
 	padding-left: 5px;
 	padding-right: 0px;
 	font-size: 24px;

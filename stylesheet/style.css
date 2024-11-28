@@ -11,6 +11,16 @@
 	--hue: 280;
 }
 
+/* @import "https://www.nerdfonts.com/assets/css/webfont.css"
+<i class="nf nf-custom-vim"></i> */
+@font-face {
+	font-family: "FiraCode Nerd Font";
+	src: url("../assets/fonts/FiraCodeNerdFontMono-Regular.ttf") format("truetype");
+	font-stretch: normal;
+	font-style: normal;
+	font-weight: 700;
+}
+
 /*
  * Keyframes
  */
