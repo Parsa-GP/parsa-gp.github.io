@@ -3,6 +3,12 @@ ol, ul {
 	padding-bottom: 8px;
 }
 
+#post {
+	backdrop-filter: var(--bdfilter);
+	border-radius: 5px;
+	background: #17171794;
+}
+
 #p-top {
 	display: flex;
 	margin-bottom: 8px;
@@ -79,7 +85,7 @@ ol, ul {
 }
 
 #p-text {
-	font-size: large;
+	font-size: normal;
 	overflow: hidden;
 	display: inline-block;
 	margin-bottom: 30px;

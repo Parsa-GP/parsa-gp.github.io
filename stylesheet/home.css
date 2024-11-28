@@ -52,6 +52,7 @@
 .p-time, .p-tag {
 	display: flex;
 	align-items: center;
+	text-wrap: nowrap;
 }
 
 .p-tag::after {

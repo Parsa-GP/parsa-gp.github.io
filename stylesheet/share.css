@@ -36,7 +36,7 @@
 .share-btns > a:focus,
 .share-btns > a:hover {
 	box-shadow: 0 0 8px white;
-	padding-left: 24px;
+	padding-left: 26px;
 }
 
 .share-btns > a:active {
@@ -45,12 +45,12 @@
 
 .share-btns > a::before {
 	position: absolute;
-	top: -6px;
+	top: -4px;
   	left: 5px;
 	font-size: x-large;
-	padding-right: 4px;
 	opacity: 0;
 	transition-duration: 0.2s;
+	font-size: 20px;
 }
 
 .share-btns > a:hover::before {
