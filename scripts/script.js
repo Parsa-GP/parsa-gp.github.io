@@ -1,19 +1,18 @@
 
 function home() {
-		alert("Home!!")
+	alert("Home!!")
 }
 
 function github() {
-		window.location.href = "https://github.com/parsa-gp"
+	window.location.href = "https://github.com/parsa-gp"
+	alert("Loading...")
 }
 
 function about() {
-		alert("About!!")
+	window.location.href = "./about"
+	alert("Loading...")
 }
 
-function pall() {
-		alert("All Posts!!")
-}
 
 
 async function fetchData() {
