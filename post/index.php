@@ -1,19 +1,18 @@
 <?php
     include("../db.php");
 
-    if (!isset($_GET["p"])) {
+    if (!isset($_GET["p"]) || $_GET["p"]=='') {
         header("Location: ../");
     }
 
-    $sql = "SELECT id, 'type', category, 'date', title, poster, content FROM posts WHERE id = ". preg_replace('/\D/', '', $_GET["p"]);
+    $sql = "SELECT id, type, category, date, title, poster, content FROM posts WHERE id = ". preg_replace('/\D/', '', $_GET["p"]);
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
 
-    if (!$row) {
+    if (!$row || $row['type'] == "post") {
         header("Location: ../");
     }
 
-    // echo $row['type']."<br>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +27,7 @@
     <script src="../scripts/showdown.min.js"></script>
     <script src="../scripts/share.js" defer></script>
     <script src="../scripts/quote.js"></script>
+    <script src="../scripts/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             var converter = new showdown.Converter()

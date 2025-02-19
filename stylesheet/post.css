@@ -11,15 +11,19 @@ ol, ul {
 
 #p-top {
 	display: flex;
+	flex-direction: column;
 	margin-bottom: 8px;
 	justify-content: space-between;
 	padding: 0 10px;
+	align-items: center;
 }
 
 #p-tags {
 	display: flex;
 	width: fit-content;
-	right: 12px;
+	border-top: 1px solid hsl(var(--hue), 50%, 50%);
+	width: 60%;
+	justify-content: center;
 }
 
 #p-tag::before {
@@ -34,6 +38,7 @@ ol, ul {
 #p-time, #p-tag {
 	display: flex;
 	align-items: center;
+	white-space: nowrap;
 }
 
 #p-tag::after {
@@ -58,8 +63,9 @@ ol, ul {
 	text-shadow: 0px 2px 5px hsl(var(--hue), 100%, 50%);
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: nowrap;
 	padding: 6px 2px;
+	text-align: center;
+	width: 90%;
 }
 
 #p-images {

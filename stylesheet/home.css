@@ -107,8 +107,6 @@
 	max-height: calc(20vh + 150px);
 	overflow: hidden;
 	display: inline-block;
-	mask-image: linear-gradient(to bottom, white 60%, transparent 100%);
-	user-select: none;
 	text-decoration-line: none;
 }
 
