@@ -18,12 +18,19 @@
         <?php            
             include("db.php");
 
-            $sql = "SELECT id, 'type', category, 'date', title, poster, summary FROM posts";
+            $sql = "SELECT id, type, category, date, title, poster, summary FROM posts";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                  echo '<div class="post"><div class="p-top"><span class="p-title">'.$row["title"].'</span><div class="p-tags"><span class="p-tag">'.$row["category"].'</span><span class="p-time">'.$row["date"].'</span></div></div><a class="p-text" href="post/?p='.$row["id"].'">'.$row["summary"].'</a></div>';
+
+                    if ($row["type"] == "post") {
+                        $s1 = '<div class="post"><div class="p-top"><span class="p-title">'.$row["title"].'</span><div class="p-tags"><span class="p-tag">'.$row["category"].'</span><span class="p-time">'.$row["date"].'</span></div></div><a class="p-text" href="post/?p='.$row["id"].'">'.$row["summary"].'</a><div class="p-images"><img class="p-img" src="./assets/post_media/';
+                        $s2 = implode('"><img class="p-img" src="./assets/post_media/', json_decode($row["poster"])) . '"></div></div>';
+                        echo $s1.$s2;
+                    } else {
+                        echo '<div class="post"><div class="p-top"><span class="p-title">'.$row["title"].'</span><div class="p-tags"><span class="p-tag">'.$row["category"].'</span><span class="p-time">'.$row["date"].'</span></div></div><a class="p-text" href="post/?p='.$row["id"].'">'.$row["summary"].'</a></div>';
+                    }
                 }
             } else {
                 echo "No posts yet...";

@@ -23,12 +23,12 @@ ol, ul {
 }
 
 #p-tag::before {
-	content: "";
+	content: " ";
 	padding-left: 5px;
 	padding-right: 0px;
-	font-size: 24px;
+	font-size: 20px;
 	display: inline-block;
-	padding-right: 5px;
+	padding-right: 12px;
 }
 
 #p-time, #p-tag {
@@ -44,12 +44,12 @@ ol, ul {
 }
 
 #p-time::before {
-	content: "󱑆";
+	content: "󱑆 ";
 	padding-left: 5px;
 	padding-right: 0px;
-	font-size: 24px;
+	font-size: 20px;
 	display: inline-block;
-	padding-right: 5px;
+	padding-right: 12px;
 }
 
 #p-title {

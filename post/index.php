@@ -9,11 +9,11 @@
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
 
-    if ($row) {
-        echo "Type: " . $row['type'] . "<br>";
-    } else {
+    if (!$row) {
         header("Location: ../");
     }
+
+    // echo $row['type']."<br>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,6 @@
     <script src="../scripts/showdown.min.js"></script>
     <script src="../scripts/share.js" defer></script>
     <script src="../scripts/quote.js"></script>
-    <script src="../scripts/post.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             var converter = new showdown.Converter()
@@ -41,14 +40,14 @@
 
     <div id="post">
         <div id="p-top">
-            <img src="<?php echo $row['poster']; ?>">
+            <img src="<?=$row['poster'];?>">
             <span id="p-title">
-                <?php echo $row["title"]; ?>
+                <?=$row["title"];?>
             </span>
 
             <div id="p-tags">
-                <span id="p-tag"><?php $row['category'] ?></span>
-                <span id="p-time"><?php $row['date'] ?></span>
+                <span id="p-tag"><?=$row['category']?></span>
+                <span id="p-time"><?=$row['date']?></span>
             </div>
         </div>
         <div class="share-btns">

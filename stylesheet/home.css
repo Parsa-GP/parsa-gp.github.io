@@ -4,7 +4,7 @@
 	background: var(--shadow);
 	padding: 12px 16px;
 	box-shadow: 0 0 10px 5px var(--shadow);
-	transform: scale(1);
+	transform: scaleX(0.96);
 }
 
 .post::after {
@@ -20,7 +20,7 @@
 }
 
 .post:hover {
-	transform: scale(1.025);
+	transform: scaleX(1);
 }
 
 .post:hover::after {
@@ -109,6 +109,7 @@
 	display: inline-block;
 	mask-image: linear-gradient(to bottom, white 60%, transparent 100%);
 	user-select: none;
+	text-decoration-line: none;
 }
 
 /* portable tv (phones) */
