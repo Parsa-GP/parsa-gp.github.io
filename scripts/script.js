@@ -14,31 +14,6 @@ function about() {
 }
 
 
-
-async function fetchData() {
-	try {
-		const response = await fetch(new URL('post/posts.json', window.location.href).href)
-		if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`)
-		}
-		const data = await response.json()
-		console.log("Data fetched successfully!")
-
-		for (const post_file of data) {
-			const response = await fetch(new URL("post/"+post_file+".json", window.location.href).href)
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`)
-			}
-			const posts_data = await response.json()
-			console.log("Data fetched successfully!")
-			loopThroughData(posts_data, post_file)
-		}
-		
-	} catch (error) {
-		console.error('Error fetching data:', error)
-	}
-}
-
 function open_article(id, index) {
 	window.location.href = "post?"+id+":"+index
 }
@@ -121,6 +96,5 @@ document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.style.setProperty('--hue', hue)
 	})
 })
-fetchData()
 fetch_quotes("quotes.json")
 
